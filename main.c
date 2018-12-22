@@ -1,43 +1,60 @@
 #include <stdio.h>
 #include <stdlib.h>
-// 3.1. Napisaæ metodê void NewLine(). Powinna ona wypisaæ na ekran pojedyncz¹ pust¹ liniê. U¿yæ tej metodê w main().
-void NewLine() {
-printf("\n");
-}
-// 3.2. Napisaæ metodê void NewLines(int count). Powinna ona wypisaæ tyle nowych linii, ile zosta³o podanych W PARAMETRZE count (nale¿y
-// u¿yæ pêtli for). U¿yæ metodê w main()
-void NewLines(int count) {
-int i;
-for(i=0;i<=count;i++) printf("\n");
-}
-// 3.3. Napisaæ metodê void WriteBiggerNumber(int x, int y). Metoda powinna pobraæ 2 parametry i zwróciæ wiêkszy z nich. Wykorzystaæ
-// funckjê w metodzie main(). UWAGA - pobieranie liczb od u¿ytkownika powinno odbyæ siê w funkcji main(), a NIE w WriteBiggerNumber! Do
-// funkcji nale¿y jedynie przes³aæ pobrane wczeœniej parametry.
-void WriteBiggerNumber(int x, int y){
-if (x>y) printf("X jest wieksze od Y\n"); else printf("Y jest wieksze od X\n");
-}
-// 3.4. Napisaæ metodê Multiply(int x, int y) . Metoda powinna ZWRÓCIÆ (s³owo kluczowe return) iloczyn dwóch parametrów. Uwaga! Metoda
-// NIE POWINNA wypisywaæ wyniku - powinien on byæ wyœwietlony w funkcji main!
-int Multiply(int x, int y) {
-int z;
-z = x * y;
-return z;
-}
+
 int main()
 {
-NewLine();
-NewLines(3);
-int x,y;
-printf("Porownywanie x z y\n");
-printf("Podaj x: ");
-scanf("%d",&x);
-printf("Podaj y: ");
-scanf("%d",&y);
-WriteBiggerNumber(x,y);
-printf("Mnozenie x z y\n");
-printf("Podaj x: ");
-scanf("%d",&x);
-printf("Podaj y: ");
-scanf("%d",&y);
-printf("%d",Multiply(x,y));
+// 1.1
+   int tab[5];
+   int i; int j; int h; int k; int l; int g;
+   h=0;
+   for(i=0; i<5;i++)
+        {
+            j=i;
+            printf("Podaj zmienna do tablicy nr %d :",j=j+1);
+            scanf("%d",&tab[i]);
+        }
+   for(i=0; i<5;i++)
+        {
+            h=0;
+            for(j=0; j<5;j++)
+                {
+                    k=tab[i];
+                    l=tab[j];
+                    if (k>=l) h=h+1;
+                }
+    if (h==5) printf("Liczba najwieksza z tablicy to %d \n",k);
+}
+// 1.2
+for(i=0; i<5;i++)
+   {
+        printf("%d \n", tab[i]);
+   }
+for(i=4; i>=0;i--)
+   {
+        printf("%d \n", tab[i]);
+
+   }
+// 1.3
+for(i=0; i<5;i++)
+   {
+        j=i;
+        printf("Podaj zmienna do tablicy nr %d :",j=j+1);
+        scanf("%d",&tab[i]);
+   }
+int cjp; int liczp; int liczn;
+    liczp=0;
+    liczn=0;
+for (int i=0; i<4; i++)
+    {
+       if (tab[i]<tab[i+1]) {
+       cjp=1;
+       liczp=liczp+1;
+       } else {
+       cjp=0;
+       liczn=liczn+1;
+              }
+    }
+
+if (liczp==4) printf("Cala tablica jest posortowana rosnaca!"); else printf("Liczba posortowanych liczb: %d", liczp);
+return 0;
 }
